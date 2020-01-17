@@ -1,6 +1,7 @@
 package com.example.SpringBootcrud.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +25,7 @@ public class PersonaServiceImp implements IPersonaService{
 	@Override
 	public Persona getById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return personaRepository.findById(id);
 	}
 
 	@Override
@@ -36,7 +37,7 @@ public class PersonaServiceImp implements IPersonaService{
 	@Override
 	public Persona update(Persona persona) {
 		// TODO Auto-generated method stub
-		return null;
+		return personaRepository.save(persona);
 	}
 
 	@Override

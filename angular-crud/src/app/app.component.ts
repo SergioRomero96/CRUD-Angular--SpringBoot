@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-crud';
+  title = 'CRUD: en Angular & Spring Boot';
 
   constructor(private router:Router){}
 

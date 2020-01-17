@@ -15,6 +15,18 @@ export class PersonaService {
   }
 
   addPersona(persona: Persona) {
-    return this.http.post<Persona>(this.url+'/new', persona);
+    return this.http.post<Persona>(this.url + '/new', persona);
+  }
+
+  getPersona(id: number) {
+    return this.http.get<Persona>(this.url + `/${id}`);
+  }
+
+  updatePersona(persona: Persona) {
+    return this.http.put<Persona>(this.url + `/${persona.id}`, persona);
+  }
+
+  deletePersona(persona:Persona){
+    return this.http.delete<Persona>(this.url+`${persona.id}`);
   }
 }

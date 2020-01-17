@@ -11,5 +11,6 @@ import com.example.SpringBootcrud.entity.Persona;
 public interface IPersonaRepository extends JpaRepository<Persona, Integer>{
 	List<Persona> findAll();
 	Persona save(Persona persona);
+	Persona findById(int id);
 	void delete(Persona persona);
 }
