@@ -1,9 +1,13 @@
-package com.example.SpringBootcrud;
+package com.example.SpringBootcrud.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.SpringBootcrud.entity.Persona;
+import com.example.SpringBootcrud.repository.IPersonaRepository;
+import com.example.SpringBootcrud.service.IPersonaService;
 
 @Service
 public class PersonaServiceImp implements IPersonaService{
@@ -24,13 +28,13 @@ public class PersonaServiceImp implements IPersonaService{
 	}
 
 	@Override
-	public Persona add(Persona persona) {
+	public Persona save(Persona persona) {
 		// TODO Auto-generated method stub
-		return null;
+		return personaRepository.save(persona);
 	}
 
 	@Override
-	public Persona edit(Persona persona) {
+	public Persona update(Persona persona) {
 		// TODO Auto-generated method stub
 		return null;
 	}

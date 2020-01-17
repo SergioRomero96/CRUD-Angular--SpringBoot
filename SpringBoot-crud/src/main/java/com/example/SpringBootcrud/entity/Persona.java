@@ -1,4 +1,4 @@
-package com.example.SpringBootcrud;
+package com.example.SpringBootcrud.entity;
 
 import javax.persistence.*;
 
