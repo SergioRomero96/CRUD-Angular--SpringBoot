@@ -6,7 +6,7 @@ import {Persona} from '../models/Persona';
   providedIn: 'root'
 })
 export class PersonaService {
-  private url='http://localhost:8080/SpringBoot-CRUD/personas';
+  private url='http://localhost:8080/api/personas';
 
   constructor(private http: HttpClient) { }
 

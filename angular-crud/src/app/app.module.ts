@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { ListarComponent } from './components/personas/listar/listar.component';
 import { AgregarComponent } from './components/personas/agregar/agregar.component';
 import { EditarComponent } from './components/personas/editar/editar.component';
+import {FormsModule} from '@angular/forms';
+import {PersonaService} from '../app/services/persona.service';
+import {HttpClientModule}from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,13 @@ import { EditarComponent } from './components/personas/editar/editar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PersonaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

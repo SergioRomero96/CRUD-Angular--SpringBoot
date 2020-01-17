@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonaService } from 'src/app/services/persona.service';
+import { Router } from '@angular/router';
+import { Persona } from 'src/app/models/Persona';
 
 @Component({
   selector: 'app-listar',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar.component.css']
 })
 export class ListarComponent implements OnInit {
+  personas: Persona[];
 
-  constructor() { }
+  constructor(private personaService:PersonaService, private router:Router) { }
 
   ngOnInit() {
+    this.personaService.getPersonas()
+    .subscribe(data =>{
+      this.personas=data;
+    })
   }
+
+
 
 }
