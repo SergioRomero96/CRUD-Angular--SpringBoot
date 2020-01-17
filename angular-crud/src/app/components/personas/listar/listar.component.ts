@@ -11,19 +11,27 @@ import { Persona } from 'src/app/models/Persona';
 export class ListarComponent implements OnInit {
   personas: Persona[];
 
-  constructor(private personaService:PersonaService, private router:Router) { }
+  constructor(private personaService: PersonaService, private router: Router) { }
 
   ngOnInit() {
     this.personaService.getPersonas()
-    .subscribe(data =>{
-      this.personas=data;
-    })
+      .subscribe(data => {
+        this.personas = data;
+      });
   }
 
-  editPersona(persona:Persona):void{
+  editPersona(persona: Persona): void {
     console.log(persona);
-    localStorage.setItem("id",persona.id.toString());
+    localStorage.setItem("id", persona.id.toString());
     this.router.navigate(["editar"]);
+  }
+
+  deletePersona(persona: Persona) {
+    this.personaService.deletePersona(persona)
+      .subscribe(data => {
+        this.personas = this.personas.filter(p => p !== persona);
+        alert("persona eliminada correctamente!!");
+      });
   }
 
 

@@ -26,7 +26,8 @@ export class PersonaService {
     return this.http.put<Persona>(this.url + `/${persona.id}`, persona);
   }
 
-  deletePersona(persona:Persona){
-    return this.http.delete<Persona>(this.url+`${persona.id}`);
+  deletePersona(persona: Persona) {
+    console.log(persona.id);
+    return this.http.delete<Persona>(this.url + `/${persona.id}`);
   }
 }
